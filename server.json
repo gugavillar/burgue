@@ -1,0 +1,74 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "image": "xburguer.png",
+      "name": "X-Burguer",
+      "category": "Sanduíches",
+      "price": 10.00
+    },
+    {
+      "id": 2,
+      "image": "xbacon.png",
+      "name": "X-Bacon",
+      "category": "Sanduíches",
+      "price": 13.00
+    },
+    {
+      "id": 3,
+      "image": "xmonster.png",
+      "name": "X-Monster",
+      "category": "Sanduíches",
+      "price": 16.00
+    },
+    {
+      "id": 4,
+      "image": "bigchicken.png",
+      "name": "Big Chicken",
+      "category": "Sanduíches",
+      "price": 12.00
+    },
+    {
+      "id": 5,
+      "image": "kids.png",
+      "name": "Kids",
+      "category": "Sanduíches",
+      "price": 8.00
+    },
+    {
+      "id": 6,
+      "image": "combo.png",
+      "name": "Combo Individual",
+      "category": "Combos",
+      "price": 20.00
+    },
+    {
+      "id": 7,
+      "image": "refrigerante.png",
+      "name": "Refrigerante Lata 350ml",
+      "category": "Bebidas",
+      "price": 5.00
+    },
+    {
+      "id": 8,
+      "image": "suco.png",
+      "name": "Suco Natural Laranja 350ml",
+      "category": "Bebidas",
+      "price": 16.00
+    },
+    {
+      "id": 9,
+      "image": "fritas.png",
+      "name": "Porção de Batata Frita",
+      "category": "Porções",
+      "price": 5.00
+    },
+    {
+      "id": 10,
+      "image": "nuggets.png",
+      "name": "Porção de Nuggets",
+      "category": "Porções",
+      "price": 5.00
+    }
+  ]
+}
