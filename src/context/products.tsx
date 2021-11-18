@@ -74,5 +74,5 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     <ProductsContext.Provider value={{ addProductsToCart, updateQuantityProduct, removeQuantityProduct, clearCart, cart }}>
       {children}
     </ProductsContext.Provider>
-  )
-}
+  );
+};

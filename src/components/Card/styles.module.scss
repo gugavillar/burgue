@@ -7,7 +7,7 @@
     background: var(--white);
     border: 2px solid var(--gray-100);
     border-radius: 5px;
-    transition: .4s;
+    transition: 0.4s;
 
     &:hover {
       box-shadow: 0 0 10px 4px rgb(0 0 0 / 30%);
@@ -31,14 +31,14 @@
       height: 40px;
       padding: 11.5px 20px;
       font-size: 14px;
-      font-family: 'Inter', sans-serif;
+      font-family: "Inter", sans-serif;
       border-radius: 8px;
       color: var(--white);
       border: none;
       outline: none;
       background: var(--green-500);
       margin-left: 20px;
-      transition: .4s;
+      transition: 0.4s;
 
       &:hover {
         background: var(--green-100);

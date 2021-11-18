@@ -48,7 +48,7 @@ export const Cart = () => {
                       {item.quantity === 1 ? (
                         <MdOutlineCancel size={24} onClick={() => removeQuantityProduct(item.product.id)} />
                       ) : (
-                      <MdRemoveCircle size={24} onClick={() => removeQuantityProduct(item.product.id)} />
+                        <MdRemoveCircle size={24} onClick={() => removeQuantityProduct(item.product.id)} />
                       )}
                       <p>{item.quantity}</p>
                       <MdAddCircle size={24} onClick={() => updateQuantityProduct(item.product.id)} />

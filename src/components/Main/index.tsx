@@ -28,7 +28,7 @@ export const Main = () => {
             style: 'currency',
             currency: 'BRL'
           }).format(product.price)
-        }
+        };
       });
       setProducts(parsedProduct);
     });
@@ -45,6 +45,6 @@ export const Main = () => {
         <Cart />
       </div>
     </main>
-  )
-}
+  );
+};
 
