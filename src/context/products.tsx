@@ -1,4 +1,5 @@
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode, useEffect, useState } from 'react';
+import { api } from '../api/api';
 
 interface ProductsProviderProps {
   children: ReactNode;
@@ -8,8 +9,10 @@ interface ProductsContextData {
   addProductsToCart: (product: Product) => void;
   updateQuantityProduct: (id: number) => void;
   removeQuantityProduct: (id: number) => void;
+  searchProducts: (search: string) => void;
   clearCart: () => void;
   cart: ProductCart[];
+  products: Product[];
 }
 
 interface ProductCart {
@@ -30,6 +33,25 @@ export const ProductsContext = createContext({} as ProductsContextData);
 
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [cart, setCart] = useState<ProductCart[]>([]);
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    api.get('products').then(response => {
+      const parsedProduct = response.data.map((product: Product) => {
+        return {
+          id: product.id,
+          image: product.image,
+          name: product.name,
+          category: product.category,
+          price: product.price,
+          priceFormatted: new Intl.NumberFormat('pt-br', {
+            style: 'currency',
+            currency: 'BRL'
+          }).format(product.price)
+        };
+      });
+      setProducts(parsedProduct);
+    });
+  }, []);
 
   function addProductsToCart(product: Product) {
     const updateCart = [...cart];
@@ -66,12 +88,24 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
 
   }
 
+  function searchProducts(search: string) {
+    if (search.trim() === '') {
+      return;
+    }
+    const newProducts = products.filter(product => product.category.includes(search));
+    const stringProducts = products.filter(product => product.name.search(search));
+    console.log(newProducts);
+    console.log(stringProducts);
+
+    //setProducts(newProducts);
+  }
+
   function clearCart() {
     setCart([]);
   }
 
   return (
-    <ProductsContext.Provider value={{ addProductsToCart, updateQuantityProduct, removeQuantityProduct, clearCart, cart }}>
+    <ProductsContext.Provider value={{ addProductsToCart, updateQuantityProduct, removeQuantityProduct, clearCart, searchProducts, cart, products }}>
       {children}
     </ProductsContext.Provider>
   );
