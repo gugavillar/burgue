@@ -19,6 +19,14 @@
       justify-content: center;
       align-items: center;
 
+      svg {
+        color: var(--green-500);
+      }
+
+      svg.cancel {
+        color: red;
+      }
+
       p {
         font-size: 20px;
         font-weight: 600;

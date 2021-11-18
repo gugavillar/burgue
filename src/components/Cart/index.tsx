@@ -46,9 +46,9 @@ export const Cart = () => {
                     </div>
                     <div className={style.quantity}>
                       {item.quantity === 1 ? (
-                        <MdOutlineCancel size={24} onClick={() => removeQuantityProduct(item.product.id)} />
+                        <MdOutlineCancel className={style.cancel} size={24} onClick={() => removeQuantityProduct(item.product.id)} />
                       ) : (
-                        <MdRemoveCircle size={24} onClick={() => removeQuantityProduct(item.product.id)} />
+                        <MdRemoveCircle className={style.cancel} size={24} onClick={() => removeQuantityProduct(item.product.id)} />
                       )}
                       <p>{item.quantity}</p>
                       <MdAddCircle size={24} onClick={() => updateQuantityProduct(item.product.id)} />
