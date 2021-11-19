@@ -5,13 +5,18 @@ import { Cart } from '../Cart';
 import style from './styles.module.scss';
 
 export const Main = () => {
-  const { products } = useContext(ProductsContext);
+  const { products, productsSearch } = useContext(ProductsContext);
   return (
     <main className={style.container}>
       <div className={style.products}>
-        {products.map(product => (
+        {productsSearch.length ? (productsSearch.map(product => (
           <Card key={product.id} item={product} />
-        ))}
+        ))
+        ) : (
+          products.map(product => (
+            <Card key={product.id} item={product} />
+          ))
+        )}
       </div>
       <div className={style.cart}>
         <Cart />

@@ -9,6 +9,7 @@ interface Product {
   category: string;
   priceFormatted: string;
   price: number;
+  tags: string[];
 }
 
 interface CardProps {

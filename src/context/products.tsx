@@ -13,6 +13,8 @@ interface ProductsContextData {
   clearCart: () => void;
   cart: ProductCart[];
   products: Product[];
+  productsSearch: Product[];
+  result: string;
 }
 
 interface ProductCart {
@@ -27,6 +29,7 @@ interface Product {
   category: string;
   price: number;
   priceFormatted: string;
+  tags: string[];
 }
 
 export const ProductsContext = createContext({} as ProductsContextData);
@@ -34,6 +37,8 @@ export const ProductsContext = createContext({} as ProductsContextData);
 export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   const [cart, setCart] = useState<ProductCart[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [productsSearch, setProductsSearch] = useState<Product[]>([]);
+  const [result, setResult] = useState('');
   useEffect(() => {
     api.get('products').then(response => {
       const parsedProduct = response.data.map((product: Product) => {
@@ -46,10 +51,12 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
           priceFormatted: new Intl.NumberFormat('pt-br', {
             style: 'currency',
             currency: 'BRL'
-          }).format(product.price)
+          }).format(product.price),
+          tags: product.tags
         };
       });
       setProducts(parsedProduct);
+      setProductsSearch(parsedProduct);
     });
   }, []);
 
@@ -85,19 +92,18 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
       updateProduct[indexProduct].quantity--;
       setCart(updateProduct);
     }
-
   }
 
   function searchProducts(search: string) {
+    const newProducts = products.filter(product => product.tags.includes(search));
     if (search.trim() === '') {
-      return;
+      setResult('');
+      setProductsSearch([]);
+      setProducts(products);
+    } else if (newProducts.length) {
+      setResult(search);
+      setProductsSearch(newProducts);
     }
-    const newProducts = products.filter(product => product.category.includes(search));
-    const stringProducts = products.filter(product => product.name.search(search));
-    console.log(newProducts);
-    console.log(stringProducts);
-
-    //setProducts(newProducts);
   }
 
   function clearCart() {
@@ -105,7 +111,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
   }
 
   return (
-    <ProductsContext.Provider value={{ addProductsToCart, updateQuantityProduct, removeQuantityProduct, clearCart, searchProducts, cart, products }}>
+    <ProductsContext.Provider value={{ addProductsToCart, updateQuantityProduct, removeQuantityProduct, clearCart, searchProducts, cart, products, productsSearch, result }}>
       {children}
     </ProductsContext.Provider>
   );
