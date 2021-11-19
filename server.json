@@ -5,70 +5,196 @@
       "image": "xburguer.png",
       "name": "X-Burguer",
       "category": "Sanduíches",
-      "price": 10.00
+      "price": 10.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "lanche",
+        "lanches",
+        "cheeseburger",
+        "x-burgue",
+        "x",
+        "cheese"
+      ]
     },
     {
       "id": 2,
       "image": "xbacon.png",
       "name": "X-Bacon",
       "category": "Sanduíches",
-      "price": 13.00
+      "price": 13.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "lanche",
+        "lanches",
+        "x-bacon",
+        "x",
+        "bacon",
+        "cheese"
+      ]
     },
     {
       "id": 3,
       "image": "xmonster.png",
       "name": "X-Monster",
       "category": "Sanduíches",
-      "price": 16.00
+      "price": 16.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "lanche",
+        "lanches",
+        "x-monster",
+        "x",
+        "bacon",
+        "cheese"
+      ]
     },
     {
       "id": 4,
       "image": "bigchicken.png",
       "name": "Big Chicken",
       "category": "Sanduíches",
-      "price": 12.00
+      "price": 12.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "frango",
+        "chicken",
+        "lanche",
+        "lanches"
+      ]
     },
     {
       "id": 5,
       "image": "kids.png",
       "name": "Kids",
       "category": "Sanduíches",
-      "price": 8.00
+      "price": 8.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "lanche",
+        "lanches",
+        "frango",
+        "chicken",
+        "kids",
+        "kid"
+      ]
     },
     {
       "id": 6,
       "image": "combo.png",
       "name": "Combo Individual",
       "category": "Combos",
-      "price": 20.00
+      "price": 20.00,
+      "tags": [
+        "burguer",
+        "burguers",
+        "hamburguer",
+        "hamburgueres",
+        "sanduiche",
+        "sanduiches",
+        "sanduíche",
+        "sanduíches",
+        "lanche",
+        "lanches",
+        "x-bacon",
+        "x",
+        "bacon",
+        "cheese",
+        "combo",
+        "combos"
+      ]
     },
     {
       "id": 7,
       "image": "refrigerante.png",
       "name": "Refrigerante Lata 350ml",
       "category": "Bebidas",
-      "price": 5.00
+      "price": 5.00,
+      "tags": [
+        "refrigerante",
+        "refrigerantes",
+        "bebida",
+        "bebidas",
+        "lata",
+        "350ml"
+      ]
     },
     {
       "id": 8,
       "image": "suco.png",
       "name": "Suco Natural Laranja 350ml",
       "category": "Bebidas",
-      "price": 16.00
+      "price": 16.00,
+      "tags": [
+        "bebida",
+        "bebidas",
+        "suco",
+        "sucos",
+        "300ml",
+        "laranja"
+      ]
     },
     {
       "id": 9,
       "image": "fritas.png",
       "name": "Porção de Batata Frita",
       "category": "Porções",
-      "price": 5.00
+      "price": 5.00,
+      "tags": [
+        "porções",
+        "porção",
+        "batata",
+        "frita"
+      ]
     },
     {
       "id": 10,
       "image": "nuggets.png",
       "name": "Porção de Nuggets",
       "category": "Porções",
-      "price": 5.00
+      "price": 5.00,
+      "tags": [
+        "porções",
+        "porção",
+        "nuggets",
+        "nugget",
+        "nuguets",
+        "nuguet"
+      ]
     }
   ]
 }
