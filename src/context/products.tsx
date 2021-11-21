@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 import { api } from '../api/api';
-
 interface ProductsProviderProps {
   children: ReactNode;
 }
@@ -68,6 +68,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
       return;
     } else {
       const newProduct = { product: product, quantity: 1 };
+      toast.success(`${product.name} adicionado ao carrinho`);
       updateCart.push(newProduct);
     }
     setCart(updateCart);
@@ -88,6 +89,7 @@ export const ProductsProvider = ({ children }: ProductsProviderProps) => {
     if (updateProduct[indexProduct].quantity === 1) {
       const newCart = updateProduct.filter(item => item.product.id !== id);
       setCart(newCart);
+      toast.success(`${updateProduct[indexProduct].product.name} removido do carrinho`);
     } else {
       updateProduct[indexProduct].quantity--;
       setCart(updateProduct);
